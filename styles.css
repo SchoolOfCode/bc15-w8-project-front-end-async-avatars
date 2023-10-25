@@ -15,17 +15,30 @@ body{
 }
 .week-1{
     background-color: #BEE8FF;
-    border: 4vw solid white;
+    border: 6vw solid white;
     margin: 2vw;
-    padding: 0 2vw 3vw 2vw;
-    
+    padding: 2vw 4vw 2vw 4vw;
+    box-shadow: inset 0 0 1vw 1vw white;
+}
+h1 {
+    font-weight: bolder;
+    margin: 3vw 5vw  2vw 5vw;
+    font-size: 6vw;
 }
 h2{
     margin-top: 3vw;
     font-size: large;
+    font-weight: 400;
 }
 li{
     margin-left: -6vw;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
 
+a:hover {
+        color: blue;
+    }
 
