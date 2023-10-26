@@ -10,10 +10,7 @@ const commentsWrapper = document.querySelector(".comments");
  */
 async function getWorkshop() {
   // send fetch get request the workshop endpoint
-  const response = await sendFetchRequest(
-    "GET",
-    `http://localhost:3000/workshops/${workshopID}`
-  );
+  const response = await sendFetchRequest("GET", `http://localhost:3000/workshops/${workshopID}`);
   console.log(response);
   // if the request wasn't successful
   if (response.status !== "success") {
@@ -23,10 +20,7 @@ async function getWorkshop() {
   const workshopObject = response.data;
   console.log(workshopObject);
   addWorkshopDetails(workshopObject);
-  const bookmarksResponse = await sendFetchRequest(
-    "GET",
-    `http://localhost:3000/workshops/${workshopID}/bookmarks`
-  );
+  const bookmarksResponse = await sendFetchRequest("GET", `http://localhost:3000/workshops/${workshopID}/bookmarks`);
   console.log(bookmarksResponse);
   if (response.status !== "success") {
     console.log("error loading bookmarks");
@@ -36,10 +30,7 @@ async function getWorkshop() {
   bookmarksArray.forEach((bookmark) => {
     addWorkshopBookmarks(bookmark);
   });
-  const commentsResponse = await sendFetchRequest(
-    "GET",
-    `http://localhost:3000/workshops/${workshopID}/comments`
-  );
+  const commentsResponse = await sendFetchRequest("GET", `http://localhost:3000/workshops/${workshopID}/comments`);
   console.log(commentsResponse);
   if (response.status !== "success") {
     console.log("error loading comments");
@@ -71,26 +62,23 @@ function addWorkshopBookmarks(bookmark) {
   }
 }
 
-function addWorkshopComments(comment){
-    const commentBox = document.createElement("div")
-    commentBox.classList.add("commentBox");
-    commentsWrapper.appendChild(commentBox)
-        const paragraphElement = document.createElement("p");
-    paragraphElement.textContent = comment.comment;
-    commentBox.appendChild(paragraphElement)
-
+function addWorkshopComments(comment) {
+  const commentBox = document.createElement("div");
+  commentBox.classList.add("commentBox");
+  commentsWrapper.appendChild(commentBox);
+  const paragraphElement = document.createElement("p");
+  paragraphElement.textContent = comment.comment;
+  commentBox.appendChild(paragraphElement);
 }
 
-function postNewComment(){
-  const comment = document.querySelector(".commentInput").value
-  console.log(comment)
-
-
-
-
- getWorkshop();
- document.querySelector(".commentPost").addEventListener((button)=>{
-   postNewComment()
- })
+function postNewComment() {
+  const comment = document.querySelector(".commentInput").value;
+  console.log(comment);
+}
 
 getWorkshop();
+// document.querySelector(".commentPost").addEventListener((button) => {
+//   postNewComment();
+// });
+
+// getWorkshop();

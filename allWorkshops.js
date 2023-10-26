@@ -1,6 +1,14 @@
 const weeksWrapper = document.querySelector(".wrapper");
 const dropdownContainer = document.querySelector(".dropdown-content");
-const workshopDetailUrl = "http://127.0.0.1:5500/workshops.html";
+// const workshopDetailUrl = "http://127.0.0.1:5500/workshops.html";
+let workshopDetailUrl = window.location.href;
+const position = workshopDetailUrl.search("index.html");
+if (position !== -1) {
+  workshopDetailUrl = workshopDetailUrl.slice(0, position) + "workshops.html";
+} 
+console.log(workshopDetailUrl);
+
+// const workshopDetailUrl = window.location.href.replace('index.html', 'workshops.html');
 
 // 127.0.0.1:5500/Frontend/bc15-w8-project-front-end-async-avatars/workshops.html";
 
