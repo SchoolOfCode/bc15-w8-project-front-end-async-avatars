@@ -5,8 +5,12 @@ let workshopDetailUrl = window.location.href;
 const position = workshopDetailUrl.search("index.html");
 if (position !== -1) {
   workshopDetailUrl = workshopDetailUrl.slice(0, position) + "workshops.html";
-} 
-console.log(workshopDetailUrl);
+} else {
+  workshopDetailUrl = workshopDetailUrl.slice(0, position) + "workshops.html";
+}
+console.log("host", window.location.host);
+console.log("hostname", window.location.hostname)
+console.log("pathname", window.location.pathname);
 
 // const workshopDetailUrl = window.location.href.replace('index.html', 'workshops.html');
 
