@@ -29,6 +29,12 @@ ul {
     font-size: 2.5vw;
 }
 
+.link {
+    margin: 0;
+    padding: 2vw;    
+    font-size: 2.5vw
+}
+
 /* Styling for content boxes by week */
 .title{
     background-color: #FFFFFF;
@@ -122,3 +128,19 @@ button {
 a:hover {
         color: blue;
     }
+
+.link:hover {
+    color: blue
+}
+
+a.link {
+    padding: 0;
+}
+
+.commentBox {
+    margin: 2vw;
+    padding: 2vw 4vw 2vw 4vw;
+    box-shadow: inset 0 0 1vw 1vw white;
+    border-radius: 2vw;
+    background-color: white;   
+}

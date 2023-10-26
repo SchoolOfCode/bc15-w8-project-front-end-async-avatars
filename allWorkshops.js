@@ -1,6 +1,8 @@
 const weeksWrapper = document.querySelector(".wrapper");
 const dropdownContainer = document.querySelector(".dropdown-content");
-const workshopDetailUrl = "http://127.0.0.1:5500/Frontend/bc15-w8-project-front-end-async-avatars/workshops.html";
+const workshopDetailUrl = "http://127.0.0.1:5500/workshops.html";
+
+// 127.0.0.1:5500/Frontend/bc15-w8-project-front-end-async-avatars/workshops.html";
 
 /**
  * @description sends a fetch request to get all workshops and then adds the received details to the DOM
