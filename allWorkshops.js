@@ -1,13 +1,14 @@
 const weeksWrapper = document.querySelector(".wrapper");
 const dropdownContainer = document.querySelector(".dropdown-content");
 // const workshopDetailUrl = "http://127.0.0.1:5500/workshops.html";
-let workshopDetailUrl = window.location.href;
-const position = workshopDetailUrl.search("index.html");
-if (position !== -1) {
-  workshopDetailUrl = workshopDetailUrl.slice(0, position) + "workshops.html";
-} else {
-  workshopDetailUrl = workshopDetailUrl.slice(0, position) + "workshops.html";
-}
+// let workshopDetailUrl = window.location.href;
+// const position = workshopDetailUrl.search("index.html");
+// if (position !== -1) {
+//   workshopDetailUrl = workshopDetailUrl.slice(0, position) + "workshops.html";
+// } else {
+//   workshopDetailUrl = workshopDetailUrl.slice(0, position) + "workshops.html";
+// }
+let workshopDetailUrl = `http://${window.location.host}${window.location.pathname.replace('index.html', 'workshops.html')}`
 console.log("host", window.location.host);
 console.log("hostname", window.location.hostname)
 console.log("pathname", window.location.pathname);
