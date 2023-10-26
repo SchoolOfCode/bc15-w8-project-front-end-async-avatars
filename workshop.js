@@ -81,4 +81,16 @@ function addWorkshopComments(comment){
 
 }
 
+function postNewComment(){
+  const comment = document.querySelector(".commentInput").value
+  console.log(comment)
+
+
+
+
+ getWorkshop();
+ document.querySelector(".commentPost").addEventListener((button)=>{
+   postNewComment()
+ })
+
 getWorkshop();
