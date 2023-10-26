@@ -11,17 +11,14 @@ const commentsWrapper = document.querySelector(".comments");
 async function getWorkshop() {
   // send fetch get request the workshop endpoint
   const response = await sendFetchRequest("GET", `http://localhost:3000/workshops/${workshopID}`);
-  console.log(response);
   // if the request wasn't successful
   if (response.status !== "success") {
     console.log("error loading workshop");
     return;
   }
   const workshopObject = response.data;
-  console.log(workshopObject);
   addWorkshopDetails(workshopObject);
   const bookmarksResponse = await sendFetchRequest("GET", `http://localhost:3000/workshops/${workshopID}/bookmarks`);
-  console.log(bookmarksResponse);
   if (response.status !== "success") {
     console.log("error loading bookmarks");
     return;
@@ -31,7 +28,6 @@ async function getWorkshop() {
     addWorkshopBookmarks(bookmark);
   });
   const commentsResponse = await sendFetchRequest("GET", `http://localhost:3000/workshops/${workshopID}/comments`);
-  console.log(commentsResponse);
   if (response.status !== "success") {
     console.log("error loading comments");
     return;
@@ -62,23 +58,41 @@ function addWorkshopBookmarks(bookmark) {
   }
 }
 
-function addWorkshopComments(comment) {
+function addWorkshopComments(comment, loadTop=false) {
   const commentBox = document.createElement("div");
   commentBox.classList.add("commentBox");
   commentsWrapper.appendChild(commentBox);
   const paragraphElement = document.createElement("p");
   paragraphElement.textContent = comment.comment;
   commentBox.appendChild(paragraphElement);
+
+  if (!loadTop) {
+    commentsWrapper.appendChild(commentBox);
+  } else {
+    const insertBeforeElement = commentsWrapper.querySelector('.commentBox')
+    const newElementParent = document.querySelector('.comments')
+    newElementParent.insertBefore(commentBox, insertBeforeElement)
+  }
 }
 
-function postNewComment() {
+async function postNewComment() {
   const comment = document.querySelector(".commentInput").value;
-  console.log(comment);
+  const bodyObject = {
+    comment: comment,
+  };
+  const commentsResponse = await sendFetchRequest("POST", `http://localhost:3000/workshops/${workshopID}/comments`, bodyObject);
+  if (commentsResponse.status !== "success") {
+    console.log("error posting comments");
+    return;
+  }
+  const commentsObject = commentsResponse.data;
+  addWorkshopComments(commentsObject, loadTop=true);
+  document.querySelector(".commentInput").value = "";
 }
 
 getWorkshop();
-// document.querySelector(".commentPost").addEventListener((button) => {
-//   postNewComment();
-// });
+document.querySelector(".commentPost").addEventListener("click", (button) => {
+  postNewComment();
+});
 
 // getWorkshop();
