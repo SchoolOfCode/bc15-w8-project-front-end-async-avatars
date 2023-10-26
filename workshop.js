@@ -62,7 +62,7 @@ function addWorkshopComments(comment, loadTop=false) {
   const commentBox = document.createElement("div");
   commentBox.classList.add("commentBox");
   commentsWrapper.appendChild(commentBox);
-  const paragraphElement = document.createElement("p");
+  const paragraphElement = document.createElement("pre");
   paragraphElement.textContent = comment.comment;
   commentBox.appendChild(paragraphElement);
 
