@@ -8,7 +8,13 @@ const dropdownContainer = document.querySelector(".dropdown-content");
 // } else {
 //   workshopDetailUrl = workshopDetailUrl.slice(0, position) + "workshops.html";
 // }
-let workshopDetailUrl = `http://${window.location.host}${window.location.pathname.replace('index.html', 'workshops.html')}`
+let host = window.location.host;
+let pathname = window.location.pathname;
+if (!pathname.includes('index.html')) {
+  pathname += 'index.html'
+}
+
+let workshopDetailUrl = `http://${host}${pathname.replace('index.html', 'workshops.html')}`
 console.log("host", window.location.host);
 console.log("hostname", window.location.hostname)
 console.log("pathname", window.location.pathname);
