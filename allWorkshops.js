@@ -19,8 +19,8 @@ async function getAllWorkshops() {
     let weekContainerUl = null;
     contentsArray.forEach((workshop) => {
       if (holdWeekname !== workshop.week_name) {
-         const weekContainerUl = createWeeknameContainer(workshop.week_name);
-//         addWeekToShortcuts(workshop.week_name);
+        weekContainerUl = createWeeknameContainer(workshop.week_name);
+        addWeekToShortcuts(workshop.week_name);
 
         holdWeekname = workshop.week_name;
       }
@@ -40,7 +40,7 @@ function createWeeknameContainer(weekname) {
     // add class to aid CSS styling
     container.classList.add("week");
     // set the id for use by the shortcuts dropdown
-    // container.setAttribute("id", weeknameToId(weekname));
+    container.setAttribute("id", weeknameToId(weekname));
     // add the h2 element for the top of the container
     const header = document.createElement("h2");
     header.textContent = weekname;
@@ -74,6 +74,26 @@ function addWorkshopToWeek(container, workshop) {
     container.append(listItem);
     // append a <br> element to the container
     container.append(document.createElement("br"));
+}
+
+/**
+ * @description adds weekname to shortcuts dropdown
+ * @param {string} weekname name to be added to dropdown
+ */
+function addWeekToShortcuts(weekname) {
+    // create a <a> element
+    const shortcut = document.createElement('a');
+    // set the text and href for the <a> element
+    shortcut.textContent = weekname;
+    shortcut.setAttribute('href', `#${weeknameToId(weekname)}`);
+    // append the <a> element to the dropdown container
+    dropdownContainer.appendChild(shortcut);
+}
+
+
+function weeknameToId(weekname) {
+  const parts = weekname.split(" - ");
+  return parts[0].toLowerCase().replace(" ", "_");
 }
 
 getAllWorkshops();
