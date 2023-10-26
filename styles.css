@@ -144,3 +144,27 @@ a.link {
     border-radius: 2vw;
     background-color: white;   
 }
+
+.commentInput {
+    margin: 2vw;
+    padding: 2vw 4vw 2vw 4vw;
+    box-shadow: inset 0 0 1vw 1vw white;
+    border-radius: 2vw;
+    background-color: white;
+    width: 70vw;
+    height: 20vw;
+}
+
+
+.comment {
+display: flex;
+justify-content:space-between;
+align-items:end
+}
+
+.commentPost
+{
+margin-right: 2vw;
+margin-bottom: 2vw;
+
+}
