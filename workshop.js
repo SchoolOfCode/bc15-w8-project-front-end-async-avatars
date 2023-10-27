@@ -86,7 +86,7 @@ async function postNewComment() {
     return;
   }
   const commentsObject = commentsResponse.data;
-  addWorkshopComments(commentsObject, loadTop=true);
+  addWorkshopComments(commentsObject);
   document.querySelector(".commentInput").value = "";
 }
 
