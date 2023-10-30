@@ -1,177 +1,215 @@
-.wrapper{
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    
-}
-body{
-    background-color:#4299CA;
-    font-family: Tahoma, Geneva, Verdana, sans-serif
-}
-.title h1 {
-    font-weight: bolder;
-    margin: 3vw 5vw  2vw 5vw;
-    font-size: 6vw;
-}
-h2{
-    margin-top: 3vw;
-    font-size: 3vw;
-    font-weight: bold;
+html {
+  font-size: 1vw;
+  min-width: 320px;
 }
 
-h3{
-    margin-top: 3vw;
-    font-size: 3vw;
-    font-weight: bold;
+.page-container {
+  max-width: 1300px;
+  margin: auto;
+  background-color: #4299ca;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  max-width: 98%;
+  margin: auto;
+}
+body {
+  background-color: white;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+.title h1 {
+  font-weight: bolder;
+  margin: 3vw 5vw 2vw 5vw;
+  font-size: 6rem;
+}
+h2 {
+  margin-top: 3vw;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h3 {
+  margin-top: 3vw;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 ul {
-    margin: 0;
-    padding: 2vw;    
-    font-size: 2.5vw;
+  margin: 0;
+  padding: 2vw;
+  font-size: 2.5rem;
 }
 
 .link {
-    margin: 0;
-    padding: 2vw;    
-    font-size: 2.5vw
+  margin: 0;
+  padding: 2vw;
+  font-size: 2.5rem;
 }
 
 /* Styling for content boxes by week */
-.title{
-    background-color: #FFFFFF;
-    margin: 2vw;
-    text-align: center;
-    border-radius: 2vw;
+.title {
+  background-color: #ffffff;
+  margin: 2vw;
+  text-align: center;
+  border-radius: 2vw;
+  /* max-width: 98vw; */
 }
 
 footer {
-    text-align: center;
-    margin-bottom: 0;
-    border: 0;
-    padding: 0.5vw;
+  text-align: center;
+  margin-bottom: 0;
+  border: 0;
+  padding: 0.5vw;
 }
-.week{
-    background-color: #BEE8FF;
-    border: 4vw solid white;
-    margin: 2vw;
-    padding: 2vw 4vw 2vw 4vw;
-    box-shadow: inset 0 0 1vw 1vw white;
-    border-radius: 2vw;
+.week {
+  background-color: #bee8ff;
+  border: 4vw solid white;
+  margin: 2vw;
+  padding: 2vw 4vw 2vw 4vw;
+  box-shadow: inset 0 0 1vw 1vw white;
+  border-radius: 2vw;
+  /* max-width: 98vw; */
 }
-
 
 /* Header styling */
 
 header {
-    display: flex;
-    justify-content: space-between;
-    margin: 2vw;
-    padding-top: 2vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 2vw;
+  padding-top: 2vw;
 }
 
 img {
-    width: 100%;
-    height: 100%;
-    border-radius: 2vw;
+  width: 100%;
+  height: 100%;
+  border-radius: 2vw;
 }
 
 button {
-    width: 10vw;
-    height: 10vw;
-    padding: 0;
-    border: 0;  
-    border-radius: 2vw;
+  width: 10vw;
+  height: 10vw;
+  padding: 0;
+  border: 0;
+  border-radius: 2vw;
 }
 
 .logo {
-    width: 15vw;
+  width: 15vw;
 }
 
 /* Interactivity */
 
 .dropdown {
-    display: flex;
-    justify-content: flex-end;
-
-  }
-
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    max-width: 100%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin-top: 12vw;
-    background-color: white;
-    border: 2vw solid #4299CA
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 14px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {
-    color: blue;
+  display: flex;
+  justify-content: flex-end;
 }
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  max-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 12vw;
+  background-color: white;
+  border: 2vw solid #4299ca;
+  font-size: 2.5rem;
 }
-  
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  color: blue;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 a:hover {
-        color: blue;
-    }
+  color: blue;
+}
 
 .link:hover {
-    color: blue
+  color: blue;
 }
 
 a.link {
-    padding: 0;
+  padding: 0;
 }
 
 .commentBox {
-    margin: 2vw;
-    padding: 2vw 4vw 2vw 4vw;
-    box-shadow: inset 0 0 1vw 1vw white;
-    border-radius: 2vw;
-    background-color: white;   
+  margin: 2vw;
+  padding: 2vw 2vw 2vw 2vw;
+  box-shadow: inset 0 0 1vw 1vw white;
+  border-radius: 2vw;
+  background-color: white;
 }
 
 .commentInput {
-    margin: 2vw;
-    padding: 2vw 4vw 2vw 4vw;
-    box-shadow: inset 0 0 1vw 1vw white;
-    border-radius: 2vw;
-    background-color: white;
-    width: 70vw;
-    height: 20vw;
-    font-size: 2.5vw;
+  margin: 2vw;
+  padding: 2vw 4vw 2vw 4vw;
+  box-shadow: inset 0 0 1vw 1vw white;
+  border-radius: 2vw;
+  background-color: white;
+  width: 70%;
+  height: 20vw;
+  font-size: 2.5rem;
 }
-
 
 .comment {
-display: flex;
-justify-content:space-between;
-align-items:end
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  max-width: 96vw;
+  margin-right: 2vw;
 }
 
-.commentPost
-{
-margin-right: 2vw;
-margin-bottom: 2vw;
+.commentPost {
+  margin-bottom: 2vw;
+  font-size: 2rem;
+}
 
+.comments {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+pre {
+  font-size: 2rem;
+  white-space: pre;
+  overflow: auto;
+}
+
+/* set max font sizes */
+@media (min-width: 750px) {
+  pre {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 12px;
+  }
 }
