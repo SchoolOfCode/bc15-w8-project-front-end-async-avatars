@@ -80,7 +80,7 @@ async function postNewComment() {
   const bodyObject = {
     comment: comment,
   };
-  const commentsResponse = await sendFetchRequest("POST", `https://dashboard.render.com/web/srv-cl15k3235nfs73a2ce0g/workshops/${workshopID}/comments`, bodyObject);
+  const commentsResponse = await sendFetchRequest("POST", `https://project-back-end-soc-app.onrender.com/workshops/${workshopID}/comments`, bodyObject);
   if (commentsResponse.status !== "success") {
     console.log("error posting comments");
     return;
