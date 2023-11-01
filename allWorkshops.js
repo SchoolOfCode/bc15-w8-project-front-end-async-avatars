@@ -28,7 +28,7 @@ console.log("pathname", window.location.pathname);
  */
 async function getAllWorkshops() {
   // send fetch get request to all workshops endpoint
-  const response = await sendFetchRequest("GET", "https://back-end-soc-revision-app.onrender.com/workshops");
+  const response = await sendFetchRequest("GET", "https://project-back-end-soc-app.onrender.com/workshops");
   // if the request was successful
   if ((response.status = "success")) {
     // extract the data from the returned response object
