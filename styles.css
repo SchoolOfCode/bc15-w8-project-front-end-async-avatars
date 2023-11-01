@@ -1,26 +1,40 @@
+html {
+  font-size: 1vw;
+  min-width: 320px;
+}
+
+.page-container {
+  max-width: 1300px;
+  margin: auto;
+  background-color: #4299ca;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
+  max-width: 98%;
+  margin: auto;
 }
 body {
-  background-color: #4299ca;
+  background-color: white;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
 }
 .title h1 {
   font-weight: bolder;
   margin: 3vw 5vw 2vw 5vw;
-  font-size: 6vw;
+  font-size: 6rem;
 }
 h2 {
   margin-top: 3vw;
-  font-size: 3vw;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 h3 {
   margin-top: 3vw;
-  font-size: 3vw;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -31,13 +45,13 @@ a {
 ul {
   margin: 0;
   padding: 2vw;
-  font-size: 2.5vw;
+  font-size: 2.5rem;
 }
 
 .link {
   margin: 0;
   padding: 2vw;
-  font-size: 2.5vw;
+  font-size: 2.5rem;
 }
 
 /* Styling for content boxes by week */
@@ -46,6 +60,7 @@ ul {
   margin: 2vw;
   text-align: center;
   border-radius: 2vw;
+  /* max-width: 98vw; */
 }
 
 footer {
@@ -61,6 +76,7 @@ footer {
   padding: 2vw 4vw 2vw 4vw;
   box-shadow: inset 0 0 1vw 1vw white;
   border-radius: 2vw;
+  /* max-width: 98vw; */
 }
 
 /* Header styling */
@@ -108,6 +124,7 @@ button {
   margin-top: 12vw;
   background-color: white;
   border: 2vw solid #4299ca;
+  font-size: 2.5rem;
 }
 
 /* Links inside the dropdown */
@@ -142,7 +159,7 @@ a.link {
 
 .commentBox {
   margin: 2vw;
-  padding: 2vw 4vw 2vw 4vw;
+  padding: 2vw 2vw 2vw 2vw;
   box-shadow: inset 0 0 1vw 1vw white;
   border-radius: 2vw;
   background-color: white;
@@ -154,18 +171,45 @@ a.link {
   box-shadow: inset 0 0 1vw 1vw white;
   border-radius: 2vw;
   background-color: white;
-  width: 70vw;
+  width: 70%;
   height: 20vw;
-  font-size: 2.5vw;
+  font-size: 2.5rem;
 }
 
 .comment {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  max-width: 96vw;
+  margin-right: 2vw;
 }
 
 .commentPost {
-  margin-right: 2vw;
   margin-bottom: 2vw;
+  font-size: 2rem;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+pre {
+  font-size: 2rem;
+  white-space: pre;
+  overflow: auto;
+}
+
+/* set max font sizes */
+@media (min-width: 750px) {
+  pre {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 12px;
+  }
 }
